@@ -1,0 +1,22 @@
+Links interesantes:
+
+GIS: http://www.bostongis.com/
+Tutorial postGIS: http://www.bostongis.com/?content_name=postgis_tut01#316
+
+Pasos para elegir el camino en data science: https://www.analyticsvidhya.com/blog/2015/02/choose-data-science-analytics-big-data-training/
+
+5 Proyectos para aprender ciencia de datos: https://www.analyticsvidhya.com/blog/2014/11/data-science-projects-learn/
+
+Data Science + Python: https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-data-science-python/
+
+Weka – GUI way to learn Machine Learning: https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/weka-gui-learn-machine-learning/
+
+Qlik view (tipo Tableau): https://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/qlikview-learning-path/
+
+
+PySpark: https://www.analyticsvidhya.com/blog/2016/10/using-pyspark-to-perform-transformations-and-actions-on-rdd/
+
+IoT Real applications: https://www.analyticsvidhya.com/blog/2016/08/10-youtube-videos-explaining-the-real-world-applications-of-internet-of-things-iot/
+
+
+

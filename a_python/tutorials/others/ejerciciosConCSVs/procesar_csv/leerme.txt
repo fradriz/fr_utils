@@ -1,0 +1,18 @@
+# Archivo inicial (no tiene header)
+#matriz(5)cuit(11) sit_1(2) sit_jud_1(12) sit_2(2) sit_jud_2(12)
+111  22222222222 3444444  444455   666666666
+aaa  bbbbbbbbbbb cdddddd  ddddee   fffffffff
+
+# Archivo final
+matriz(5),cuit(11),sit_1(2)==sit_2008,sit_jud_1(12)==sit_jud_2008
+matriz(5),cuit(11),sit_2(2)==sit_2009,sit_jud_2(12)==sit_jud_2009
+
+111  ,22222222222, 3,444444  4444
+111  ,22222222222,55,   666666666
+aaa  ,bbbbbbbbbbb, c,dddddd  dddd
+aaa  ,bbbbbbbbbbb,ee,   fffffffff
+
+
+ print('matriz(5):',line[0:5])
+ print('cuit(11):',line[5:16])
+ print('sit_1(2):',line[16:18])

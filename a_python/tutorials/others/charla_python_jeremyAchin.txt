@@ -1,0 +1,33 @@
+Charla Python por Jeremy Achin (DataRobot company) en Ucrania
+https://www.youtube.com/watch?v=CoxjADZHUQA
+
+pandas, scikit-learn, PySpark
+
+Definición de Data Science (Drew Conway)
+	Hacking skills (programación +  SO)
+		write code and get the data wherever it is. Clean and explore the data and deliver the result in a web app for instance.
+	Math Stats knowledge
+		Using Machine Learning or any other predictive model, what technique to use, validate the data with diferent model strategies
+	Domain knowledge of the field
+		knowing the data
+		how was storage originaly, how does behave inside the model.
+		
+
+Kaggle competitions models: radom forest, bossted trees, SVM, linear model (sparks), decision trees (for exploring the data). 
+
+Neural networks/Deep Learning are good for specific class of problems.
+
+Other resourses:
+	Meetups:
+		Pydata
+		LMLP
+		Data Science journal Reading club
+
+Papers:
+	Blogs:
+		DeepMind
+		Karpathy
+Book: 
+An Introduction to Statistical Learning (Trevor Hastie, Robert Tibshirani) -> Think is best for me
+
+The Elements of Statistical Learning (Trevor Hastie, Robert Tibshirani, Jerome Fiedman) -> bible of modeling (advanced)

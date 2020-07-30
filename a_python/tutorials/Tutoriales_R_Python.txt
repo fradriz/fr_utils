@@ -1,0 +1,22 @@
+A Complete Tutorial to learn Data Science in R from Scratch
+https://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/
+
+A Complete Tutorial to Learn Data Science with Python from Scratch
+https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/
+
+Algo de featuring engeeniering:
+https://www.analyticsvidhya.com/blog/2013/10/trick-enhance-power-regression-model-2/
+
+
+Paquetes R == Python
+http://blog.yhat.com/posts/moving-from-r-to-python.html
+
+               R				-> Python
+	---------------------         ---------------------------
+glm, knn, randomForest, e1071 	-> scikit-learn
+reshape/reshape2, plyr/dplyr	-> pandas
+ggplplot2						-> ggplot + seaborn + bokeh				
+stringr (no lo conozco)			-> nothing				
+RStudio							-> Rodeo (yo use Anaconda y anda bien)
+Knitr							-> Jupyter
+sqldf							-> pandasql

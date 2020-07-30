@@ -1,0 +1,34 @@
+Video: https://www.youtube.com/watch?v=rudYHNAGbdk&feature=youtu.be
+
+Based on Python 3
+
+Recursos utilizados, tutorial de PyData 101 PyCon 2016
+
+	https://github.com/aterrel/pydata101
+
+Luego de instalar anaconda: 
+	* abrir terminal
+	* cd al directorio de trabajo (ojo con esto)
+	* ejecutar: "jupyter notebook" -> abre el browser en http://localhost:8888/tree
+	
+	* Para renovar paquetes: conda update pandas (no solo renueva pandas sino varios paquetes mas)
+
+
+Para los mas nuevos en python: boston housing data
+
+Jupyter -> notebooks
+pandas -> dataframes
+bokeh -> exploratory data analysis tool (visualization) BI
+scikit-learn -> machine learning interface
+
+IDEs para Python:
+	Anaconda viene con jupyter o Spyder (https://www.marsja.se/why-spyder-is-the-best-python-ide-for-science/)
+	Eclipse + pydev o Aptana Studio (http://www.aptana.com/)
+	python(x,y) + Spyder
+	Rodeo
+	vim (??) + https://github.com/Valloric/YouCompleteMe + https://github.com/davidhalter/jedi-vim
+	PyCharm (es libre una una versió y pago en otra)
+	Visual Studio Code + Python extension
+	
+
+

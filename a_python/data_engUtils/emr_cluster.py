@@ -1,0 +1,30 @@
+CLUSTER_SIZE_CONFIGS = dict(
+    small=dict(
+        InstanceType='m4.4xlarge',
+        InstanceCount=3,
+        DriverMemory='25g',
+        ExecutorInstances='11',
+        ExecutorMemory='22g'
+    ),
+    medium=dict(
+        InstanceType='r5.12xlarge',
+        InstanceCount=3,
+        DriverMemory='30g',
+        ExecutorInstances='27',
+        ExecutorMemory='40g'
+    ),
+    large=dict(
+        InstanceType='r5.12xlarge',
+        InstanceCount=8,
+        DriverMemory='30g',
+        ExecutorInstances='48',
+        ExecutorMemory='39g'
+    ),
+    large_m=dict(
+        InstanceType='m5.4xlarge',
+        InstanceCount=12,
+        DriverMemory='20g',
+        ExecutorInstances='60',
+        ExecutorMemory='10g'
+    )
+)

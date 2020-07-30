@@ -1,0 +1,80 @@
+Pensar un curso de Spark/PySpark
+
+Chapter 1
+    * Intro: Spark vs Hadoop MapReduce
+    * History, version evolution main changes .. what's new in Spark 3
+    * Executors, memory, cpu, etc
+
+    * Basic configurations:
+        * Linux: how env variables (PySpark PATHS, SPARK_HOME) and sessions works to not mix-up configurations when running spark.
+        * Managing .jars: place them, spark-submit with jars.
+        * Change verbosity levels in Spark output
+
+Chapter 2
+* spark-submit
+* Armar una session de spark optimizada y comparar una ejecución contra otra no optimizada
+
+* Porque usar Dataframes y no RDDs (opimizadores de Spark: catalyst)
+    - https://www.analyticsvidhya.com/blog/2016/09/comprehensive-introduction-to-apache-spark-rdds-dataframes-using-pyspark/
+    - https://www.analyticsvidhya.com/blog/2016/10/using-pyspark-to-perform-transformations-and-actions-on-rdd/?utm_source=blog&utm_medium=DataFramePySparkarticle
+    - https://www.analyticsvidhya.com/blog/2016/10/spark-dataframe-and-operations/
+
+* Optimización y benchmarks de python.
+
+* optimizaciones en corridas (hacer benchmarks)
+    - Test pyton vs scala
+    ############################################################
+    * EC2 and EMR and Quobole:
+        + Spark 2.4 vs 3.0 Benchmark:
+            i) Python vs Python: For cycles vs Comprehension lists vs Map/Lambda
+            ii) Python vs Scala
+            iii) plain UDFs vs Pandas UDFs vs Scala UDFs
+    ############################################################
+
+New in 3.0:
+ Link1: https://spark.apache.org/releases/spark-release-3-0-0.html
+ Link2: https://databricks.com/blog/2020/06/18/introducing-apache-spark-3-0-now-available-in-databricks-runtime-7-0.html
+"Spark SQL is the top active component in this release. 46% of the resolved tickets are for Spark SQL.
+These enhancements benefit all the higher-level libraries, including structured streaming and MLlib,
+and higher level APIs, including SQL and DataFrames. Various related optimizations are added in this release.
+In TPC-DS 30TB benchmark, Spark 3.0 is roughly two times faster than Spark 2.4.
+
+
+Python is now the most widely used language on Spark.
+PySpark has more than 5 million monthly downloads on PyPI, the Python Package Index.
+This release improves its functionalities and usability, including the pandas UDF API redesign with Python type hints,
+new pandas UDF types, and more Pythonic error handling.
+
+Here are the feature highlights in Spark 3.0:
+    * adaptive query execution;
+    * dynamic partition pruning;
+    * ANSI SQL compliance;
+    * significant improvements in pandas APIs;
+    * new UI for structured streaming;
+    * up to 40x speedups for calling R user-defined functions;
+    * accelerator-aware scheduler;
+    * and SQL reference documentation."
+
+
+* DAGS y explain !
+
+* debuguear el codigo (pdb)
+
+
+* UDFs:
+    - probar pyton vs scala (benchamarks)
+    - Pandas ? (ver de hacer una tabla de conversión Pandas - PySpark.SQL)
+
+* UDAFs:
+    - Previous to version 3.0 this problem was detected (https://issues.apache.org/jira/browse/SPARK-27296)
+"Spark's UDAFs appear to be serializing and de-serializing to/from the MutableAggregationBuffer for each row...
+it is executing ser/de on every row of the data frame.
+This is a major problem for UDAFs, as it means that every UDAF is doing a massive amount of unnecessary work per row,
+including but not limited to Row object allocations."
+
+Bottom line: Don't use UDAFs previous to Spark 3.0 !! (though, still need to test it in 3.0).
+
+Spark 3.0 features list: https://spark.apache.org/releases/spark-release-3-0-0.html
+
+
+

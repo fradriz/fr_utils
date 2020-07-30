@@ -1,0 +1,5 @@
+Del video: Beginner's Guid to Machine Learning Competitions
+
+https://github.com/chdoig/pytexas2015-ml
+
+https://speakerdeck.com/chdoig/pytexas-2015-ml-tutorial
