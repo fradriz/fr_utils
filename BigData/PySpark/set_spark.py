@@ -3,6 +3,8 @@ from pyspark.sql import SparkSession
 from multiprocessing import cpu_count
 from psutil import virtual_memory
 
+# Link:
+
 # Get Spark conf after cretaing the session:
 #    spark.sparkContext.getConf().getAll()
 ##############################FUNCTION TO GENERATE SPARK SESSION###############
@@ -22,6 +24,7 @@ def set_spark():
     spark = SparkSession.builder \
         .appName("Any name to use in the spark job") \
         .config('fs.s3a.connection.maximum', n_cpus) \
+        .config('spark.default.parallelism', n_cpus * 4) \
         .config('spark.executor.memory', str(ex_mem) + 'g') \
         .config('spark.executor.cores', cores_per_executor) \
         .config('spark.num.executors', n_cpus // cores_per_executor) \

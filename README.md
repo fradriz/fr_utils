@@ -3,7 +3,7 @@ I use this repo as a personal library. Also, I use it to build a Python library 
 
 ## Install it
 
-cd ~/Dropbox/Tech/fr_utils/&& python3 -m pip install .
+cd ~/../fr_utils/&& python3 -m pip install .
 # cd ~/repos/data-engineering-utils/ && python3 -m pip install . --user
 
 ## Directory structure

@@ -73,6 +73,25 @@ $ virtualenv test_env --system-site-packages
 # Then doing a pip list will list the same packages that we have in the system (and don't need to download them again !!)
 $ source test_env/bin/activate
 (test_env) $ pip list
+-------------------
+# Another was: https://snarky.ca/a-quick-and-dirty-guide-on-how-to-install-packages-for-python/
+
+# Step 1: Create a virtual environment (with customized prompt)
+python3.8 -m venv --prompt (basename $PWD) .venv
+python3.8 -m venv --prompt `basename $PWD` .venv
+
+# Step 2: Activate your virtual environment
+# fish shell
+source .venv/bin/activate.fish
+
+# bash shell
+source .venv/bin/activate
+
+# Step 3: Install your package(s)
+python -m pip install --upgrade pip
+
+
+
 
 
 
