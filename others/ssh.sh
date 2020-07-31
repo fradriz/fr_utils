@@ -10,9 +10,9 @@ ssh -A -t ruapehu.example.com ssh -A -t aoraki
 ssh -i pk.pem hadoop@172.31.4.84 -t "free -h";ssh -i pk.pem hadoop@172.31.7.73 -t "free -h";ssh -i pk.pem hadoop@172.31.9.168 -t "free -h"
 
 
-ssh -i ~/.ssh/kp-spine-facundo-radrizzani.pem -A -t hadoop@ec2-3-235-88-115.compute-1.amazonaws.com ssh -A 172.31.11.102 -t "echo Slave_102; free -h"
+ssh -i ~/.ssh/kp-private-key.pem -A -t hadoop@ec2-3-235-88-115.compute-1.amazonaws.com ssh -A 172.31.11.102 -t "echo Slave_102; free -h"
 
-ssh -i ~/.ssh/kp-spine-facundo-radrizzani.pem -A -t hadoop@ec2-3-235-88-115.compute-1.amazonaws.com ssh -A 172.31.11.102 -t "hostname"
+ssh -i ~/.ssh/kp-private-key.pem -A -t hadoop@ec2-3-235-88-115.compute-1.amazonaws.com ssh -A 172.31.11.102 -t "hostname"
 
 https://stackoverflow.com/questions/40897671/run-command-on-emr-slaves
 #Copy ssh key(like ssh_key.pem) of the cluster to master node.
