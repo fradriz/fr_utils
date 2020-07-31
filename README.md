@@ -2,7 +2,6 @@
 I use this repo as a personal library. Also, I use it to build a Python library that needs to be installed.
 
 ## Install it
-
 cd ~/../fr_utils/&& python3 -m pip install .
 # cd ~/repos/data-engineering-utils/ && python3 -m pip install . --user
 
