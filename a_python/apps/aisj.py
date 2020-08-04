@@ -5,16 +5,18 @@
 #                                                                                   #
 # Print AIS Json file when having the run_id. Without run_id just print the folder  #
 # Mac location: /usr/local/bin/aisj                                                 #
+#                                                                                   #
 #####################################################################################
 
 import os
 import argparse
 
 
+
 # 1) must enter run_id as argument eg: 20200709190048YiRenCheng
 parser = argparse.ArgumentParser(
     description='Print AIS json file in the screen console.',
-    usage='\t%(prog)s [-run_id] <run_id> [-h] [-v]\n\n'
+    usage='\t%(prog)s [-s] <service name> [-run_id] <run_id> [-h] [-v]\n\n'
     )
 
 # mandatory_args = parser.add_argument_group('Mandatory arguments')
@@ -26,6 +28,14 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    '-service', '-s',
+    dest='service',
+    help='AIS service to list:'
+         'idmap(i), profiling(p), segmentation(s), hypertargeting(h), batch(b)',
+    required=False
+)
+
+parser.add_argument(
     '-v',
     action='version',
     version='%(prog)s version 1.0'
@@ -33,10 +43,23 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-# 2) List the AWS S3 path and select the right file
-S3_PATH = 's3://BUCKET/processing/ais/json-processed/'
+services = {'i': 'idmap',
+            'p': 'profiling',
+            's': 'segmentation',
+            'h': 'hypertargeting',
+            'b': 'batch'}
 
-if args.run_id:
+# 2) List the AWS S3 path and select the right file
+S3_PATH = f's3://{BUCKET}/processing/ais/json-processed/'
+
+if args.service:
+    aux = services.get(args.service)
+    service = aux if aux else args.service
+    cmd = f'aws s3 ls {S3_PATH} | grep {service}'
+    print(cmd)
+    os.system(cmd)
+
+elif args.run_id:
     files = os.popen(f'aws s3 ls {S3_PATH} | grep {args.run_id}').read()
 
     if files:
