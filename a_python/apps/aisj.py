@@ -11,7 +11,7 @@
 import os
 import argparse
 
-
+BUCKET = 'data-engineering-9979'
 
 # 1) must enter run_id as argument eg: 20200709190048YiRenCheng
 parser = argparse.ArgumentParser(

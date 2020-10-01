@@ -20,8 +20,8 @@ END
 echo after comment
 
 git status
-# Then I can push to the branch
-git push origin develop
+# Then I can push to 'PAN-2612b' branch
+git push origin PAN-2612b
 
 # Pull from the current branch
 git pull

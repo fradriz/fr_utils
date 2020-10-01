@@ -1,3 +1,8 @@
+# Get all the nodes in cluster
+hdfs dfsadmin -report | grep Hostname
+  Hostname: ip-172-31-2-122.ec2.internal
+  Hostname: ip-172-31-9-212.ec2.internal
+
 # Get some options of the command
 $ hadoop fs -help
 

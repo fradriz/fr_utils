@@ -8,6 +8,7 @@ from multiprocessing import cpu_count
 from pyspark.sql import SparkSession
 # Internal imports
 from de_utils.gral_utils import log_to_file
+from pyspark.sql.functions import col
 
 
 def set_spark(emr_cluster=True):
@@ -31,7 +32,7 @@ def set_spark(emr_cluster=True):
         log_to_file(f'Creating SparkSession in single Instance')
 
     spark = SparkSession.builder \
-        .appName(f"Testing with PySpark") \
+        .appName("Testing with PySpark") \
         .config('fs.s3a.connection.maximum', n_cpus) \
         .config('spark.default.parallelism', n_cpus * 4) \
         .config('spark.executor.memory', str(ex_mem) + 'g') \
@@ -65,6 +66,14 @@ def read_df(spark, src, header=False, delimiter='\t', file_type='csv'):
     log_to_file(f"Reading data from: {src}")
 
     if 'csv' in file_type:
+        '''
+        # Different ways to read the data:
+        # using a sample to reduce data size
+        df = (spark.read.option("header", True)
+            .csv(path)
+            .sample(withReplacement=False, fraction=0.3, seed=3)
+        )
+        '''
         df = spark.read \
             .option('header', header) \
             .option('delimiter', delimiter) \
@@ -113,9 +122,7 @@ def emr_write_dataframe(df, dest, spark):
     log_to_file('Writing transformed DataFrame to {}'.format(local_output))
 
     # DEVf - Testing without repartition at all #
-    df.write \
-        .mode('overwrite') \
-        .parquet(local_output)
+    df.write.mode('overwrite').parquet(local_output)
 
     """df.repartition(num_parts).write \
         .mode('overwrite') \
@@ -147,3 +154,56 @@ def copy_s3_hdfs(src, dest):
     cmd = f"s3-dist-cp --src {src} --dest {dest}"
     log_to_file(f'copy_s3_hdfs - Executing:{cmd}')
     os.system(cmd)
+
+
+def filter_df(df):
+    return (df
+            .filter((col("code") >= 500) & (col("code") < 600))
+            .select("date", "time", "extention", "code")
+            )
+
+
+def group_by_hour(df):
+    from pyspark.sql.functions import from_utc_timestamp, hour, col
+    '''
+    Given this kind of log data: (logs extracted from https://www.sec.gov/dera/data/edgar-log-file-data-set.html)
+    +---------------+----------+--------+----+---------+--------------------+--------------------------+-----+------+---+-------+-------+----+-------+-------+
+    |ip             |date      |time    |zone|cik      |accession           |extention                 |code |size  |idx|norefer|noagent|find|crawler|browser|
+    +---------------+----------+--------+----+---------+--------------------+--------------------------+-----+------+---+-------+-------+----+-------+-------+
+    |101.71.41.ihh  |2017-03-29|00:00:44|0.0 |1437491.0|0001245105-17-000052|xslF345X03/primary_doc.xml|301.0|687.0 |0.0|0.0    |0.0    |10.0|0.0    |null   |
+    |104.196.240.dda|2017-03-29|04:07:10|0.0 |1270985.0|0001188112-04-001037|.txt                      |200.0|7619.0|0.0|0.0    |0.0    |10.0|0.0    |null   |
+    +---------------+----------+--------+----+---------+--------------------+--------------------------+-----+------+---+-------+-------+----+-------+-------+
+    '''
+
+    countsDF = (df
+                .select(hour(from_utc_timestamp(col("time"), "GMT")).alias("hour"))
+                .groupBy("hour")
+                .count()
+                .orderBy("hour")
+                )
+
+    return True
+
+
+def group_by_number_of_id(df):
+    # Again, different ways to do the same:
+    """
+    ipCountDF = (logDF
+      .select('ip')
+      .groupBy("ip")
+      .count()
+      .sort("count",ascending=False)
+    )
+
+    or
+
+    from pyspark.sql.functions import desc
+
+    ipCountDF = (logDF
+      .select('ip')
+      .groupBy("ip")
+      .count()
+      .orderBy(desc("count"))
+    )
+    """
+    return df.select('ip').groupBy("ip").count().sort("count", ascending=False)

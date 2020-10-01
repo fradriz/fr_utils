@@ -6,23 +6,25 @@
 * If we try to read directly with "spark.read.csv('file.csv.gz', sep='\t')",
   then it will exhaust one executor and the others will remain free. This will probably end with an strange error.
 
-The thing is that .gz files are not splittable !!
+The problem is that .gz files are not splittable !!
     * https://aws.amazon.com/blogs/big-data/top-10-performance-tuning-tips-for-amazon-athena/
     * https://docs.cloudera.com/documentation/enterprise/5-3-x/topics/admin_data_compression_performance.html
+
 For MapReduce, if you need your compressed data to be splittable, BZip2, LZO, and Snappy formats are splittable,
 but GZip is not.
     * https://stackoverflow.com/questions/49490640/ho-to-read-gz-compressed-file-using-spark-df-or-ds
 the only extra consideration to take into account is that the gz file is not splittable, therefore Spark needs to read 
-the whole file using a single core which will slow things down..
+the whole file using a single core which will slow things down.
 
 ## Possible solutions
 
-### 1) EC2 > copy the file > transfor to a splittable formaat > copy back to S3
+### 1) EC2 > copy the file > transfor to a splittable format > copy back to S3
 https://stackoverflow.com/questions/43829601/efficient-way-to-work-in-s3-gzip-file-from-emr-spark
 
 ### 1.1) Transform gz to bz2
 https://superuser.com/questions/23533/converting-gzip-files-to-bzip2-efficiently
 AFTER DOWNLOADING parallel & pbzip2 THIS WORKED !: 
+(EMR: sudo yum install parallel)
     $ time ls *.gz | parallel "gunzip -c {} | pbzip2 -c > {.}.bz2"   
 
 ### 1.2.1) Divide the file in parts
@@ -38,7 +40,7 @@ without taking account for the whole line -> this could not be a solution !
 Just in case, put all the parts back to one file: $ cat b.csv.gz.part-a* > bb.csv.gz
 
 ### 1.2.2) Uncompress, divide the file, compress back 
-Two ways (not tested, but sure it will take some time for the uncompress/compress bakc):
+Two ways (not tested, but sure it will take some time for the uncompress/compress back):
     $ time zcat bb.csv.gz | split -l 3000000 – bb.csv.gz.part
     $ time gunzip –c bb.csv.gz | split -l 2000000 – bb.csv.gz.part
 
