@@ -1,6 +1,8 @@
 # Personal Library
 I use this repo as a personal library. Also, I use it to build a Python library that needs to be installed.
 
+Some items included: PySpark, Python, SQL (Athena, Hive, etc), Databricks Tutorial, aws & git CLI among others.
+
 ## Install it
 cd ~/../fr_utils/&& python3 -m pip install .
 # cd ~/repos/data-engineering-utils/ && python3 -m pip install . --user
@@ -11,7 +13,6 @@ cd ~/../fr_utils/&& python3 -m pip install .
     ├── BigData
     │   ├── PySpark
     │   │   ├── PySparkCheatSheet.pdf
-    │   │   ├── scala.sh
     │   │   ├── set_spark.py
     │   │   ├── spark_submit.sh
     │   │   ├── training
@@ -29,6 +30,44 @@ cd ~/../fr_utils/&& python3 -m pip install .
     │   │   │   │   └── query_plan.png
     │   │   │   └── notes.md
     │   │   └── tutorials
+    │   │       ├── DataBricks
+    │   │       │   ├── DBCs
+    │   │       │   │   ├── ETL-Part-1-1.3.1-SPNC-AWS.dbc
+    │   │       │   │   ├── ETL-Part-1-1.3.1-SPNC-MSA.dbc
+    │   │       │   │   ├── ETL-Part-2-1.3.1-SPNC-AWS.dbc
+    │   │       │   │   ├── ETL-Part-2-1.3.1-SPNC-MSA.dbc
+    │   │       │   │   ├── ETL-Part-3-1.1.1-SPNC-AWS.dbc
+    │   │       │   │   ├── ETL-Part-3-1.1.1-SPNC-MSA.dbc
+    │   │       │   │   ├── MLflow-AWS.dbc
+    │   │       │   │   ├── MLflow-AZU.dbc
+    │   │       │   │   ├── Structured-Streaming-1.3.1-SPNC-AWS.dbc
+    │   │       │   │   └── Structured-Streaming-1.3.1-SPNC-MSA.dbc
+    │   │       │   ├── ETL_01
+    │   │       │   │   ├── ETL1\ 02\ -\ ETL\ Process\ Overview.html
+    │   │       │   │   ├── ETL1\ 03\ -\ Connecting\ to\ S3.html
+    │   │       │   │   ├── ETL1\ 04\ -\ Connecting\ to\ JDBC.html
+    │   │       │   │   ├── ETL1\ 05\ -\ Applying\ Schemas\ to\ JSON\ Data.html
+    │   │       │   │   ├── ETL1\ 06\ -\ Corrupt\ Record\ Handling.html
+    │   │       │   │   └── ETL1\ 07\ -\ Loading\ Data\ and\ Productionalizing.html
+    │   │       │   ├── ETL_02
+    │   │       │   │   ├── ETL2\ 01\ -\ Course\ Overview\ and\ Setup.html
+    │   │       │   │   ├── ETL2\ 02\ -\ Common\ Transformations.html
+    │   │       │   │   ├── ETL2\ 03\ -\ User\ Defined\ Functions.html
+    │   │       │   │   ├── ETL2\ 04\ -\ Advanced\ UDFs.html
+    │   │       │   │   ├── ETL2\ 05\ -\ Joins\ and\ Lookup\ Tables.html
+    │   │       │   │   ├── ETL2\ 06\ -\ Database\ Writes.html
+    │   │       │   │   └── ETL2\ 07\ -\ Table\ Management.html
+    │   │       │   └── ETL_03
+    │   │       │       ├── ETL3\ 02\ -\ Streaming\ ETL.html
+    │   │       │       ├── ETL3\ 03\ -\ Runnable\ Notebooks.html
+    │   │       │       ├── ETL3\ 04\ -\ Scheduling\ Jobs\ Programatically.html
+    │   │       │       ├── ETL3\ 05\ -\ Job\ Failure.html
+    │   │       │       ├── ETL3\ 06\ -\ ETL\ Optimizations.html
+    │   │       │       └── ETL3_03_runnablesNBs
+    │   │       │           ├── Runnable-1.html
+    │   │       │           ├── Runnable-2.html
+    │   │       │           ├── Runnable-3.html
+    │   │       │           └── Runnable-4.html
     │   │       ├── PandasUDF_UDAF.ipynb
     │   │       ├── RepartitionAndCoalsce.html
     │   │       ├── RepartitionAndCoalsce.ipynb
@@ -55,37 +94,40 @@ cd ~/../fr_utils/&& python3 -m pip install .
     │   │       │       └── 03_JoinTaxonomy.html
     │   │       ├── cache_persist.html
     │   │       ├── cache_persist.ipynb
-    │   │       └── pySparkTutorial
-    │   │           ├── 02_MoviesRDDs.ipynb
-    │   │           ├── 03_SparkDataFrames.html
-    │   │           ├── 03_SparkDataFrames.ipynb
-    │   │           ├── Data-ML-100k--master
-    │   │           │   ├── README.md
-    │   │           │   └── ml-100k
-    │   │           │       ├── README
-    │   │           │       ├── allbut.pl
-    │   │           │       ├── mku.sh
-    │   │           │       ├── u.data
-    │   │           │       ├── u.genre
-    │   │           │       ├── u.info
-    │   │           │       ├── u.item
-    │   │           │       ├── u.occupation
-    │   │           │       ├── u.user
-    │   │           │       ├── u1.base
-    │   │           │       ├── u1.test
-    │   │           │       ├── u2.base
-    │   │           │       ├── u2.test
-    │   │           │       ├── u3.base
-    │   │           │       ├── u3.test
-    │   │           │       ├── u4.base
-    │   │           │       ├── u4.test
-    │   │           │       ├── u5.base
-    │   │           │       ├── u5.test
-    │   │           │       ├── ua.base
-    │   │           │       ├── ua.test
-    │   │           │       ├── ub.base
-    │   │           │       └── ub.test
-    │   │           └── pySparkTutorial.ipynb
+    │   │       ├── pySparkTutorial
+    │   │       │   ├── 02_MoviesRDDs.ipynb
+    │   │       │   ├── 03_SparkDataFrames.html
+    │   │       │   ├── 03_SparkDataFrames.ipynb
+    │   │       │   ├── Data-ML-100k--master
+    │   │       │   │   ├── README.md
+    │   │       │   │   └── ml-100k
+    │   │       │   │       ├── README
+    │   │       │   │       ├── allbut.pl
+    │   │       │   │       ├── mku.sh
+    │   │       │   │       ├── u.data
+    │   │       │   │       ├── u.genre
+    │   │       │   │       ├── u.info
+    │   │       │   │       ├── u.item
+    │   │       │   │       ├── u.occupation
+    │   │       │   │       ├── u.user
+    │   │       │   │       ├── u1.base
+    │   │       │   │       ├── u1.test
+    │   │       │   │       ├── u2.base
+    │   │       │   │       ├── u2.test
+    │   │       │   │       ├── u3.base
+    │   │       │   │       ├── u3.test
+    │   │       │   │       ├── u4.base
+    │   │       │   │       ├── u4.test
+    │   │       │   │       ├── u5.base
+    │   │       │   │       ├── u5.test
+    │   │       │   │       ├── ua.base
+    │   │       │   │       ├── ua.test
+    │   │       │   │       ├── ub.base
+    │   │       │   │       └── ub.test
+    │   │       │   └── pySparkTutorial.ipynb
+    │   │       └── scala
+    │   │           ├── scala.sh
+    │   │           └── testing_scala.py
     │   ├── emr.md
     │   ├── environment_for_pyspark.sh
     │   ├── files
@@ -106,15 +148,22 @@ cd ~/../fr_utils/&& python3 -m pip install .
     │   ├── hive
     │   │   ├── hive_alter.sql
     │   │   ├── hive_complex.sql
+    │   │   ├── hive_complex_select.sql
     │   │   ├── hive_create_tables.sql
     │   │   └── hive_show.sql
     │   ├── impala
     │   │   └── impala_metadata.sql
     │   ├── oracle
     │   └── vertica
+    ├── Interviews
+    │   ├── aws.md
+    │   ├── big_data.md
+    │   ├── databricks.md
+    │   ├── general_es.md
+    │   ├── python.md
+    │   └── sql.md
     ├── README.md
     ├── a_python
-    │   ├── Virtual_Environments.sh
     │   ├── UnitTest
     │   │   ├── __init__.py
     │   │   ├── __pycache__
@@ -128,20 +177,26 @@ cd ~/../fr_utils/&& python3 -m pip install .
     │   │       │   └── test_sum.cpython-37.pyc
     │   │       ├── test_sum.py
     │   │       └── test_sum.pyc
+    │   ├── Virtual_Environments.sh
     │   ├── __init__.py
     │   ├── apps
     │   │   ├── AWSs3Purge.py
+    │   │   ├── __init__.py
     │   │   ├── adding_sparse_vectors.py
-    │   │   ├── app1.py
+    │   │   ├── aisj.py
+    │   │   ├── batch.py
     │   │   ├── csv_schema_update.py
+    │   │   ├── f.py
     │   │   └── lambda_function.py
-    │   ├── de_utils
+    │   ├── data_engUtils
+    │   │   ├── __init__.py
     │   │   ├── aws_utils.py
+    │   │   ├── dashboard_utils.py
+    │   │   ├── emr_cluster.py
     │   │   ├── gral_utils.py
     │   │   └── pyspark_utils.py
-    │   └── tutoriales
+    │   └── tutorials
     │       ├── DScienceTutorial
-    │       │   ├── A\ Complete\ Tutorial\ to\ Learn\ Data\ Science\ with\ Python\ from\ Scratch.url
     │       │   ├── Tutorial\ Python\ 00.html
     │       │   ├── Tutorial\ Python\ 01.ipynb
     │       │   ├── Tutorial+Python+00.html
@@ -164,18 +219,52 @@ cd ~/../fr_utils/&& python3 -m pip install .
     │       │   ├── python_fundamentals_basic_modules.html
     │       │   └── python_fundamentals_basic_modules.ipynb
     │       ├── PyPackages.md
-    │       ├── PythonBuenasPracticas
-    │       │   ├── Python-BuenasPracticas.html
-    │       │   ├── Python-BuenasPracticas.ipynb
-    │       │   └── buenas\ practicas\ pythonEFX.docx
+    │       ├── PythonGoodPractices
+    │       │   ├── GoodPractices.docx
+    │       │   ├── Python-GoodPractices.html
+    │       │   └── Python-GoodPractices.ipynb
     │       ├── Tutoriales_R_Python.txt
-    │       ├── objetos
+    │       ├── objets
     │       │   ├── OO_2.html
     │       │   ├── OO_2.ipynb
     │       │   ├── Python\ OOP.ipynb
     │       │   ├── Python+OOP.html
     │       │   ├── python_fundamentals_classes.html
     │       │   └── python_fundamentals_classes.ipynb
+    │       ├── others
+    │       │   ├── Basic\ and\ capture_nb.html
+    │       │   ├── Data\ Munging.ipynb
+    │       │   ├── Data+Munging.html
+    │       │   ├── ML_python_y_R.py
+    │       │   ├── charla_python_jeremyAchin.txt
+    │       │   ├── ejerciciosConCSVs
+    │       │   │   ├── check_csvFile.py
+    │       │   │   ├── ejerciciosConCSVs.html
+    │       │   │   ├── ejerciciosConCSVs.ipynb
+    │       │   │   ├── p.csv
+    │       │   │   ├── procesar_csv
+    │       │   │   │   ├── Archivos\ (csv,\ txt,\ etc).ipynb
+    │       │   │   │   ├── inicial.csv
+    │       │   │   │   ├── inicial.txt
+    │       │   │   │   ├── leerme.txt
+    │       │   │   │   └── procesar_csv.zip
+    │       │   │   ├── syc.sh
+    │       │   │   └── u_rar.sh
+    │       │   ├── estructura
+    │       │   │   ├── __pycache__
+    │       │   │   │   └── s2.cpython-35.pyc
+    │       │   │   ├── estructura_pies.zip
+    │       │   │   ├── s2.py
+    │       │   │   ├── t.py
+    │       │   │   ├── t2.py
+    │       │   │   └── test.py
+    │       │   ├── links_interesantesDataScience.txt
+    │       │   └── py_hive_udfs
+    │       │       ├── 00_test.py
+    │       │       ├── a.py
+    │       │       ├── b.py
+    │       │       ├── blog_hive.py
+    │       │       └── cc.py
     │       ├── pandas_numpy
     │       │   ├── CheatSheet_numpy_scipy_pandas.pdf
     │       │   ├── Datacamp-Pandas.ipynb
@@ -194,64 +283,33 @@ cd ~/../fr_utils/&& python3 -m pip install .
     │       │   ├── pydata101-master.zip
     │       │   ├── pydata101.txt
     │       │   └── sklearn_examples.ipynb
-    │       ├── pytexas2015
-    │       │   ├── PyTexas\ 2015\ ML\ Tutorial\ --\ Speaker\ Deck.url
-    │       │   ├── pytexas-ml-tutorial.pdf
-    │       │   ├── pytexas2015-ml-master
-    │       │   │   ├── 0-Exploration.ipynb
-    │       │   │   ├── 1-Feature_extraction.ipynb
-    │       │   │   ├── 2-Modeling.ipynb
-    │       │   │   ├── 3-Validation.ipynb
-    │       │   │   ├── 4-Ensemble.ipynb
-    │       │   │   ├── README.md
-    │       │   │   └── environment.yml
-    │       │   ├── pytexas2015-ml-master.zip
-    │       │   └── pytexas_notas.txt
-    │       └── varios
-    │           ├── Basic\ and\ capture_nb.html
-    │           ├── Data\ Munging.ipynb
-    │           ├── Data+Munging.html
-    │           ├── ML_python_y_R.py
-    │           ├── charla_python_jeremyAchin.txt
-    │           ├── ejerciciosConCSVs
-    │           │   ├── check_csvFile.py
-    │           │   ├── ejerciciosConCSVs.html
-    │           │   ├── ejerciciosConCSVs.ipynb
-    │           │   ├── p.csv
-    │           │   ├── procesar_csv
-    │           │   │   ├── Archivos\ (csv,\ txt,\ etc).ipynb
-    │           │   │   ├── inicial.csv
-    │           │   │   ├── inicial.txt
-    │           │   │   ├── leerme.txt
-    │           │   │   └── procesar_csv.zip
-    │           │   ├── syc.sh
-    │           │   └── u_rar.sh
-    │           ├── estructura
-    │           │   ├── __pycache__
-    │           │   │   └── s2.cpython-35.pyc
-    │           │   ├── estructura_pies.zip
-    │           │   ├── s2.py
-    │           │   ├── t.py
-    │           │   ├── t2.py
-    │           │   └── test.py
-    │           ├── links_interesantesDataScience.txt
-    │           └── py_hive_udfs
-    │               ├── 00_test.py
-    │               ├── a.py
-    │               ├── b.py
-    │               ├── blog_hive.py
-    │               └── cc.py
+    │       └── pytexas2015
+    │           ├── PyTexas\ 2015\ ML\ Tutorial\ --\ Speaker\ Deck.url
+    │           ├── pytexas-ml-tutorial.pdf
+    │           ├── pytexas2015-ml-master
+    │           │   ├── 0-Exploration.ipynb
+    │           │   ├── 1-Feature_extraction.ipynb
+    │           │   ├── 2-Modeling.ipynb
+    │           │   ├── 3-Validation.ipynb
+    │           │   ├── 4-Ensemble.ipynb
+    │           │   ├── README.md
+    │           │   └── environment.yml
+    │           ├── pytexas2015-ml-master.zip
+    │           └── pytexas_notas.txt
+    ├── aws
+    │   ├── clone_repo.sh
+    │   ├── copy_data_across_accounts.sh
+    │   ├── emr_bootstrap.sh
+    │   └── lambda.md
     ├── git
     │   ├── git_cli.sh
-    │   ├── modify_critial_branch.sh
+    │   ├── modify_critical_branch.sh
     │   └── new_branch.sh
     ├── notes.md
     ├── others
-    │   ├── aisj.py
     │   ├── bash_cron_time.sh
-    │   ├── clone_repo.sh
-    │   ├── emr_bootstrap.sh
     │   ├── main_json.sh
+    │   ├── many_cmds.sh
     │   ├── sed_useful_cmds.sh
     │   ├── ssh.sh
     │   └── system_commands.py
